@@ -1,0 +1,123 @@
+﻿
+.main {
+    padding-top: 20px;
+   
+}
+.group1 {
+    background-color: #e7e9f3;
+    font-family: 'Times New Roman', Times, serif;
+    color: #003399;
+    border: double;
+    border-color: blue;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 5px 5px 5px #666;
+    -moz-box-shadow: 5px 5px 5px #666;
+    -webkit-box-shadow: 5px 5px 5px #666;
+}
+.slogan {
+    text-align:right;
+    
+}
+.footer {
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #003399;
+    color: white;
+    text-align: center;
+}
+.giaithich {
+    border: inset;
+    border-radius: 10px;
+    font-style: initial;
+    margin-top: 10px;
+    border-color: blue;
+    color: darkblue;
+    padding: 5px;
+}
+.text-lable {
+    /*padding-left: 10px;*/
+  
+    font-weight: bold;
+}
+.text-input
+{
+    padding:5px;
+    text-transform:lowercase;
+}
+.text-btn {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align:right;
+}
+.form-info {
+    background-color: #e7e9f3;
+    /*background-image: linear-gradient(to bottom, #45afff,#003399);*/
+    padding-top: 20px;
+    float: left;
+    border: double;
+    border-radius: 10px;
+    font-style: oblique;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+    color: #003399;
+    margin-top: 10px;
+    border-color: blue;
+    box-shadow: 5px 5px 5px #666;
+    -moz-box-shadow: 5px 5px 5px #666;
+    -webkit-box-shadow: 5px 5px 5px #666;
+}
+    .form-info p .k {
+        font-style: oblique;
+    }
+.form-tieude {
+    float: left;
+    padding: 5px;
+    font-style: initial;
+    text-align: center;
+    font-weight: bold;
+    color: #003399;
+    font-size: 20px;
+   
+}
+.form-check1 {
+    margin-top: 20px;
+    text-align: right;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-weight: bold;
+}
+.form-check2 {
+    font-weight: 500;
+    margin-top: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.row1 h2 {
+    padding-top: 20px;  
+}
+.giaithich {
+    background-color: #e7e9f3;
+    font-family: 'Times New Roman', Times, serif;
+    color: #003399;
+    box-shadow: 5px 5px 5px #666;
+    -moz-box-shadow: 5px 5px 5px #666;
+    -webkit-box-shadow: 5px 5px 5px #666;
+}
+
+@media only screen and (max-width: 375px) {
+    .form-tieude {
+        font-size: 18px;
+    }
+    .row1 h2{
+        padding-top:20px;
+        font-size: 18px;
+    }
+    .slogan  {
+        width: 50%;
+    }
+}
+

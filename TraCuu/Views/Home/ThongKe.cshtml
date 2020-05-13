@@ -1,0 +1,44 @@
+﻿@using TraCuu.Models
+@model IEnumerable<ThongKeModel>
+@{
+    ViewData["Title"] = "ThongKe";
+}
+<style>
+    .thongke {
+        padding-top: 20px;
+        color: blue;
+    }
+</style>
+<div class="container thongke">
+    <div class="row"><h2>THỐNG KÊ SỐ LƯỢT TRUY CẬP</h2></div>
+    <div class="row">
+        @*<a href="@Url.Action("create", "home")">Create</a>*@
+        <br />
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Đang online</th>
+                    <th>Lượt truy cập</th>
+                    <th>Lượt tra cứu TGTK</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Online.ToString("#,###")</td>
+                            <td>@item.TruyCap.ToString("#,###")</td>
+                            <td>@item.XemTietKiem.ToString("#,###")</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

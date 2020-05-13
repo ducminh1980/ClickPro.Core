@@ -1,0 +1,179 @@
+﻿@model TraCuu.Models.BangKeModel
+
+<environment names="Development,Staging,Production">
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+          rel="stylesheet" type="text/css" />
+</environment>
+
+@*<link href="~/chosen/chosen.css" rel="stylesheet" />*@
+<!-- Breadcrumbs -->
+
+<div class="container main">
+
+    <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-12 form-info">
+            <p>Kính gửi quý khách hàng!</p>
+            <p>Tổ chức Tài chính vi vô CEP trân trọng cảm ơn quý khách hàng đã tin tưởng và sử dụng dịch vụ của chúng tôi.</p>
+            <p>Để bảo mật thông tin, quý khách vui lòng cung cấp đầy dủ các thông tin cá nhân để truy xuất dịch vụ .</p>
+            <p> Trân trọng cảm ơn quý khách hàng.</p>
+        </div>
+        <div class="col-xl-1 col-lg-1 col-md-1 col-12 trong"></div>
+
+        <div class="col-xl-8 col-lg-8 col-md-8 col-12  group1">
+
+            @Html.AntiForgeryToken()
+            <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-12 form-tieude">Quý khách vui lòng cung cấp các thông tin sau:</div>
+
+                <div class="dx-clearfix"></div>
+
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-6 form-check1">
+                        <input asp-for="ToChuc" type="radio" name="ToChuc" id="tochuc" value="true" onchange="showHide">
+                        <label class="form-check-label" for="tochuc">Tổ chức</label>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-6 form-check2">
+                        <input asp-for="ToChuc" type="radio" name="ToChuc" id="canhan" value="false" checked>
+                        <label class="form-check-label" for="canhan">Cá nhân</label>
+                    </div>
+                </div>
+                <div class="dx-clearfix"></div>
+
+                <div class="row">
+                    <div class="col-xl-5 col-lg-5 col-md-6 col-12 text-lable">
+                        <label class="form-check-label">Chi nhánh gửi:</label>
+                    </div>
+                    <div  class="col-xl-7 col-lg-7 col-md-6 col-12 text-input">
+                        @*@Html.DropDownListFor(model => model.ChiNhanhID, (IEnumerable<SelectListItem>)ViewBag.CategoryList, "chọn chi nhánh...",new { @id = "Dropdown", @class = "form-control" })*@
+                        <select id="Dropdown" asp-for="ChiNhanhID" class="form-control">
+                            <option selected value="">chọn chi nhánh...</option>
+                            <option value="1">Hội sở</option>
+                            <option value="39">Chi nhánh Bến Lức</option>
+                            <option value="4">Chi nhánh Bến Nghé</option>
+                            <option value="34">Chi nhánh Bến Tre</option>
+                            <option value="25">Chi nhánh Biên Hòa</option>
+                            <option value="30">Chi nhánh Biên Hòa Đông</option>
+                            <option value="23">Chi nhánh Bình Chánh</option>
+                            <option value="13">Chi nhánh Bình Tân</option>
+                            <option value="14">Chi nhánh Bình Thạnh</option>
+                            <option value="33">Chi nhánh Cần Đước</option>
+                            <option value="15">Chi nhánh Cần Giờ</option>
+                            <option value="24">Chi nhánh Cao Lãnh</option>
+                            <option value="38">Chi nhánh Châu Thành</option>
+                            <option value="16">Chi nhánh Củ Chi</option>
+                            <option value="26">Chi nhánh Đức Hòa</option>
+                            <option value="17">Chi nhánh Gò Vấp</option>
+                            <option value="18">Chi nhánh Hóc Môn</option>
+                            <option value="27">Chi nhánh Long Thành</option>
+                            <option value="28">Chi nhánh Mỹ Tho</option>
+                            <option value="19">Chi nhánh Nhà Bè</option>
+                            <option value="2">Chi nhánh Nhơn Trạch</option>
+                            <option value="10">Chi nhánh Quận 10</option>
+                            <option value="12">Chi nhánh Quận 12</option>
+                            <option value="6">Chi nhánh Quận 6</option>
+                            <option value="8">Chi nhánh Quận 8</option>
+                            <option value="9">Chi nhánh Quận 9</option>
+                            <option value="32">Chi nhánh Sa Đéc</option>
+                            <option value="29">Chi nhánh Tân An</option>
+                            <option value="21">Chi nhánh Tân Phú</option>
+                            <option value="37">Chi nhánh Tây Ninh</option>
+                            <option value="20">Chi nhánh Thủ Dầu Một</option>
+                            <option value="22">Chi nhánh Thủ Đức</option>
+                            <option value="35">Chi nhánh Thuận An</option>
+                            <option value="31">Chi nhánh Trung An</option>
+                            <option value="36">Chi nhánh Vĩnh Long</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="dx-clearfix"></div>
+                <div class="row">
+                    <div class="col-xl-5 col-lg-5 col-md-6 col-12 text-lable">
+                        <label class="form-check-label" id="cmnd">CMND\CCCD:</label>
+                    </div>
+                    <div class="col-xl-7 col-lg-7 col-md-6 col-12 text-input">
+                        <input  type="number" asp-for="CMND" name="CMND" class="form-control" placeholder="nhập CMND\CCCD...">
+                    </div>
+                </div>
+                <div class="dx-clearfix"></div>
+                <div class="row">
+                    <div class="col-xl-5 col-lg-5 col-md-6 col-12 text-lable">
+                        <label class="form-check-label">Mã khách hàng:</label>
+                    </div>
+                    <div class="col-xl-7 col-lg-7 col-md-6 col-12 text-input">
+                        <input  type="text" asp-for="MaKhachHang" name="MaKhachHang" class="form-control" placeholder="nhập mã khách hàng...">
+                    </div>
+                </div>
+                <div class="dx-clearfix"></div>
+                <div class="row">
+                    <div class="col-xl-5 col-lg-5 col-md-6 col-12 text-lable">
+                        <captcha id="registerCapcha" user-input-id="CaptchaCode" image-width="200" image-height="50" image-style="Halo" />
+                    </div>
+                    <div class="col-xl-7 col-lg-7 col-md-6 col-12 text-input">
+                        <input  type="text" asp-for="CaptchaCode" name="CaptchaCode" class="form-control" placeholder="nhập mã xác nhận...">
+                    </div>
+                </div>
+                <div class="col-xl-12">
+
+                </div>
+                <div class="dx-clearfix"></div>
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-md-8 col-8 ">
+                        <div asp-validation-summary="All" style="font-size:12px !important;" class="text-danger" ></div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-4 text-btn">
+                        <div class="submit-text">
+                            <button type="submit" style="font-size:12px !important;" class="btn btn-primary">Tiếp tục </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </form>
+
+
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("a[title ~= 'BotDetect']").removeAttr("style");
+            $("a[title ~= 'BotDetect']").removeAttr("href");
+            $("a[title ~= 'BotDetect']").css('visibility', 'hidden');
+        });
+        $("input[type='radio']").change(function () {
+            var rd = document.getElementById('tochuc');
+            var rd1 = document.getElementById('canhan');
+            if (rd.checked == true) {
+                $("#cmnd").text("CMND\\CCCD người đại diện ký hợp đồng:")
+            }
+            if (rd1.checked == true) {
+                $("#cmnd").text("CMND\\CCCD:")
+            }
+        });
+           // $(function(){
+           //     $("#Dropdown").chosen({
+           //         allow_single_deselect: true,
+
+           //         //placeholder_text_single: "chọn chi nhánh...",
+           //         //    width: '100%',
+           //         no_results_text: "Không tìm thấy kết quả :",
+
+           //     });
+           //     $.validator.setDefaults({ ignore: ":hidden:not(select)" })
+           //     $("#submit").validate({
+           //                     rules: {chosen:"required"},
+           //                     message: {chosen:"chọn chi nhánh gửi"}
+           //     });
+           //});
+
+    </script>
+
+</div>
+
+
+@*<script src="~/chosen/chosen.jquery.js"></script>*@
+@section Scripts {
+
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

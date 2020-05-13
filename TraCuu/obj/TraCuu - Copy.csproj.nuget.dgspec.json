@@ -1,0 +1,95 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\DucMinh\\MyOneDrive\\Project\\ClickPro.Core\\ClickPro.Core\\TraCuu\\TraCuu - Copy.csproj": {}
+  },
+  "projects": {
+    "D:\\DucMinh\\MyOneDrive\\Project\\ClickPro.Core\\ClickPro.Core\\TraCuu\\TraCuu - Copy.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\DucMinh\\MyOneDrive\\Project\\ClickPro.Core\\ClickPro.Core\\TraCuu\\TraCuu - Copy.csproj",
+        "projectName": "TraCuu - Copy",
+        "projectPath": "D:\\DucMinh\\MyOneDrive\\Project\\ClickPro.Core\\ClickPro.Core\\TraCuu\\TraCuu - Copy.csproj",
+        "packagesPath": "C:\\Users\\minh.bd\\.nuget\\packages\\",
+        "outputPath": "D:\\DucMinh\\MyOneDrive\\Project\\ClickPro.Core\\ClickPro.Core\\TraCuu\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "D:\\DucMinh\\MyOneDrive\\Project\\ClickPro.Core\\ClickPro.Core\\TraCuu\\NuGet.Config",
+          "C:\\Users\\minh.bd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 19.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "BuildBundlerMinifier": {
+              "target": "Package",
+              "version": "[2.9.406, )"
+            },
+            "Captcha": {
+              "target": "Package",
+              "version": "[4.4.2, )"
+            },
+            "DevExtreme.AspNet.Data": {
+              "target": "Package",
+              "version": "[2.6.1, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.BrowserLink": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

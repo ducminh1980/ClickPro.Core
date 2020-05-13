@@ -1,0 +1,78 @@
+﻿@* execute the CldrData action method *@
+ <script src="~/js/vendor.js" asp-append-version="true"></script>
+<div class="container">
+    <div class="row1" style="color:darkblue;text-align:center"><h2>Sao kê số dư khách hàng</h2></div>
+    <div id="date" class="date" style="color:darkblue;text-align:center"><p>Thời điểm :31/01/2020</p></div>
+
+    @model IEnumerable<TraCuu.Models.BangKeModel>
+    @using (Html.BeginForm())
+{
+    using (Html.DevExtreme().ValidationGroup())
+    {
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @(Html.DevExtreme().DataGrid<TraCuu.Models.BangKeModel>()
+.DataSource(Model)
+.ID("gridContainer")
+.ElementAttr(new { @class = "dx-card wide-card" })
+//.FilterRow(f => f.Visible(true))
+.ColumnAutoWidth(true)
+.ColumnHidingEnabled(true)
+.CellHintEnabled(true)
+.RemoteOperations(true)
+.ShowBorders(true)
+//.Export(e => e
+//    .Enabled(true)
+//    .FileName("Orders"))
+.Columns(columns =>
+
+{
+
+    columns.AddFor(m => m.NgayGui)
+        .DataType(GridColumnDataType.Date)
+        .Format("dd/MM/yyyy")
+        .Alignment(HorizontalAlignment.Center);
+
+    columns.AddFor(m => m.SoTienGui)
+        .DataType(GridColumnDataType.Number)
+        .Format("#,##0");
+
+    columns.AddFor(m => m.ThoiHan).DataType(GridColumnDataType.Number)
+        .Format("#### tháng").Alignment(HorizontalAlignment.Center);
+
+    columns.AddFor(m => m.LaiSuat)
+        .DataType(GridColumnDataType.Number)
+        .Format("##.#0").Alignment(HorizontalAlignment.Center).Width(130);
+
+    columns.AddFor(m => m.NgayTaiTuc)
+        .DataType(GridColumnDataType.Date)
+        .Format("dd/MM/yyyy").Alignment(HorizontalAlignment.Center);
+
+    columns.AddFor(m => m.SoDu)
+        .DataType(GridColumnDataType.Number)
+        .Format("#,##0");
+
+    columns.AddFor(m => m.NgayDenHan).DataType(GridColumnDataType.Date)
+        .Format("dd/MM/yyyy").Alignment(HorizontalAlignment.Center);
+})
+    )
+
+
+    }
+}
+    <script>
+        n = new Date(); n.setDate(n.getDate() + -1); y = n.getFullYear(); m = n.getMonth() + 1; d = n.getDate();
+        document.getElementById("date").innerHTML = "Số liệu đến ngày: " + d + "/" + m + "/" + y;
+
+    </script>
+    <div class="giaithich">
+        <div class="container">
+            <div class="row">Giải thích:</div>
+            <div class="row">1 Ngày gửi: là ngày đầu tiên gửi của Quý khách hàng</div>
+            <div class="row">2 Lãi suất: là lãi suất đáo hạn mới nhất theo quy định về lãi suất của CEP</div>
+            <div class="row">3 Ngày đến hạn: là ngày đến hạn liền kề kế tiếp</div>
+        </div>
+    </div>
+</div>
+
